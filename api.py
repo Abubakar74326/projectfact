@@ -2,7 +2,8 @@
 #from fastapi import FastAPI
 
 from flask import Flask
-import factorial
+import factorial_file
+
 
 app = Flask(__name__)
 
@@ -12,7 +13,7 @@ def read_root():
 
 @app.route('/factorial/<int:num>/')
 def read_item(num: int):
-    fact = factorial.factorial(num)
+    fact = factorial_file.factorial(num)
     return {"factorial": fact}
 
 if __name__ == '__main__':
